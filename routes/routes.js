@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const gigRoutes = require('./gigs.route');
+const petRoutes = require("./pets.route");
 
-router.use('/gigs', gigRoutes);
+router.use("/pets", petRoutes);
 module.exports = router;
