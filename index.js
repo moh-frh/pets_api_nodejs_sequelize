@@ -31,9 +31,13 @@ db.sync()
 // ****************************************************************************************************
 const Pet = require("./models/Pet.js");
 const Category = require("./models/Category.js");
+const User = require("./models/User.js");
 
 Category.hasMany(Pet);
 Pet.belongsTo(Category);
 
-module.exports = { Pet, Category };
+User.hasMany(Pet);
+Pet.belongsTo(User);
+
+module.exports = { Pet, Category, User };
 // ****************************************************************************************************

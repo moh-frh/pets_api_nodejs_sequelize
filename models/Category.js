@@ -7,14 +7,14 @@ const Category = db.define("category", {
     primaryKey: true,
     autoIncrement: true,
   },
-  title: {
+  name: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  image: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
+  // image: {
+  //   type: Sequelize.STRING,
+  //   allowNull: false,
+  // },
 });
 
 module.exports = Category;
