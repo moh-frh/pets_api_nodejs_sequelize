@@ -15,7 +15,9 @@ function addCategory(req, res) {
       res.send(data);
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -26,7 +28,9 @@ function findCategoryById(req, res) {
       res.send(data);
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -40,7 +44,9 @@ function deleteById(req, res) {
       });
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -54,7 +60,9 @@ function updateCategory(req, res) {
       });
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -65,7 +73,9 @@ function findCategories(req, res) {
       res.send(data);
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 

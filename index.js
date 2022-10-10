@@ -18,7 +18,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(cors("*"));
 
-//Pet routes
+// routes
 app.use("/", require("./routes/routes"));
 
 const PORT = process.env.PORT || 5000;
@@ -27,3 +27,13 @@ db.sync()
     app.listen(PORT, console.log(`Server started on port ${PORT}`));
   })
   .catch((err) => console.log("Error: " + err));
+
+// ****************************************************************************************************
+const Pet = require("./models/Pet.js");
+const Category = require("./models/Category.js");
+
+Category.hasMany(Pet);
+Pet.belongsTo(Category);
+
+module.exports = { Pet, Category };
+// ****************************************************************************************************

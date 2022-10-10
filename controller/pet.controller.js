@@ -15,7 +15,9 @@ function addPet(req, res) {
       res.send(data);
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -26,7 +28,9 @@ function findPetById(req, res) {
       res.send(data);
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -40,7 +44,9 @@ function deleteById(req, res) {
       });
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -54,7 +60,9 @@ function updatePet(req, res) {
       });
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
@@ -65,7 +73,9 @@ function findPets(req, res) {
       res.send(data);
     })
     .catch((error) => {
-      console.log(error);
+      res.status(error.status || 500).send({
+        error: error,
+      });
     });
 }
 
