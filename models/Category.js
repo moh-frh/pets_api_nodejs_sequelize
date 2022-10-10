@@ -1,16 +1,20 @@
 const Sequelize = require("sequelize");
 const db = require("../config/database");
 
-const Pet = db.define("pet", {
+const Category = db.define("category", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  name: {
+  title: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  image: {
     type: Sequelize.STRING,
     allowNull: false,
   },
 });
 
-module.exports = Pet;
+module.exports = Category;
