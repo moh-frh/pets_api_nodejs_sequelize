@@ -32,6 +32,7 @@ db.sync()
 const Pet = require("./models/Pet.js");
 const Category = require("./models/Category.js");
 const User = require("./models/User.js");
+const Characteristic = require("./models/Characteristic");
 
 Category.hasMany(Pet);
 Pet.belongsTo(Category);
@@ -39,5 +40,8 @@ Pet.belongsTo(Category);
 User.hasMany(Pet);
 Pet.belongsTo(User);
 
-module.exports = { Pet, Category, User };
+Characteristic.belongsToMany(Pet, { through: "PetCaracteristic" });
+Pet.belongsToMany(Characteristic, { through: "PetCaracteristic" });
+
+module.exports = { Pet, Category, User, Characteristic };
 // ****************************************************************************************************
