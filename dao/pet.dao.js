@@ -1,4 +1,7 @@
 const Pet = require("../models/Pet");
+const Category = require("../models/Category");
+const User = require("../models/User");
+
 var petDao = {
   findAll: findAll,
   create: create,
@@ -8,7 +11,9 @@ var petDao = {
 };
 
 function findAll() {
-  return Pet.findAll();
+  return Pet.findAll({
+    include: [{ model: User, Category }],
+  });
 }
 
 function findById(id) {

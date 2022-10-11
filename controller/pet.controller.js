@@ -1,4 +1,7 @@
 const petDao = require("../dao/pet.dao");
+const Category = require("../models/Category");
+const { Sequelize } = require("sequelize");
+
 var petController = {
   addPet: addPet,
   findPets: findPets,
