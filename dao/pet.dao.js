@@ -12,7 +12,18 @@ var petDao = {
 
 function findAll() {
   return Pet.findAll({
-    include: [{ model: User, Category }],
+    attributes: { exclude: ["userId", "categoryId"] },
+    include: [
+      {
+        model: User,
+        // attributes: { exclude: ["id"] },
+        // required: true,
+      },
+      {
+        model: Category,
+        required: true,
+      },
+    ],
   });
 }
 
