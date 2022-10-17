@@ -26,11 +26,8 @@ function create(characteristic) {
 
 function updateCharacteristic(characteristic, id) {
   var Cpdatecharacteristic = {
-    title: characteristic.title,
-    technologies: characteristic.technologies,
+    name: characteristic.name,
     description: characteristic.description,
-    budget: characteristic.budget,
-    contact_email: characteristic.contact_email,
   };
   return Characteristic.update(Cpdatecharacteristic, { where: { id: id } });
 }

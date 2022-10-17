@@ -26,11 +26,7 @@ function create(categ) {
 
 function updateCategory(Category, id) {
   var updateCategory = {
-    title: Category.title,
-    technologies: Category.technologies,
-    description: Category.description,
-    budget: Category.budget,
-    contact_email: Category.contact_email,
+    name: Category.name,
   };
   return category.update(updateCategory, { where: { id: id } });
 }

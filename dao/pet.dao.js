@@ -42,11 +42,11 @@ function create(pet) {
 
 function updatePet(pet, id) {
   var updatePet = {
-    title: pet.title,
-    technologies: pet.technologies,
+    name: pet.name,
+    age: pet.age,
+    gender: pet.gender,
     description: pet.description,
-    budget: pet.budget,
-    contact_email: pet.contact_email,
+    address: pet.address,
   };
   return Pet.update(updatePet, { where: { id: id } });
 }

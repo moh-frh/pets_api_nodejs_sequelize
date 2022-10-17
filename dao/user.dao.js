@@ -26,11 +26,11 @@ function create(user) {
 
 function updateUser(user, id) {
   var updateUser = {
-    title: user.title,
-    technologies: user.technologies,
-    description: user.description,
-    budget: user.budget,
-    contact_email: user.contact_email,
+    username: user.username,
+    phone: user.phone,
+    gender: user.gender,
+    wilaya: user.wilaya,
+    gps: user.gps,
   };
   return User.update(updateUser, { where: { id: id } });
 }
